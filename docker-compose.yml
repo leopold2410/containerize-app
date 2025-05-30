@@ -1,0 +1,13 @@
+services:
+  containerize:
+    image: containerize:latest
+    build:
+      context: .
+    volumes:
+      - ./logs:/var/log/nginx
+    ports:
+      - "2222:80"
+    environment:
+      ASSET_DIR: "/usr/share/nginx/html/assets"
+      # Real values for your frontend to consume
+      VITE_API_URL: "https://api.myapp.com"
