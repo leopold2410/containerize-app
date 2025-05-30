@@ -54,5 +54,7 @@ For executing the script properly we copy it to /docker-entrypoint.d directory w
 
 ## Security Consideration
 
-For security reasons I would not extend this script for replacing any environment variable injected during startup of the container. But explicitly replace them by name in this script.
+For security reasons, I recommend avoiding a generic approach to replacing all environment variables injected at container startup. Instead, explicitly replace each variable by name within this script.
+
+Please be cautious using environment variables. If you need to load sensitive information into the frontend, ensure it's done securely by requesting it from the backend — using proper encryption and authentication for transfer and data in rest.
 
