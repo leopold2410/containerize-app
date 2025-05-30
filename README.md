@@ -42,13 +42,13 @@ During startup nginx docker image automatically replaces environment variables w
 20-envsubst-on-templates.sh: Running envsubst on /etc/nginx/templates/default.conf.template to /etc/nginx/conf.d/default.conf
 ```
 
-For finally replacing the __VITE_API_URL__ which we injected in the .env.production file we use the bash script in: 
+For finally replacing the ```__VITE_API_URL__``` which we injected in the .env.production file we use the bash script in: 
 
 ```
 scripts/replace-wellknown-vars.sh
 ```
 
-The find commands finds all files in a directory specified by the ASSETS_DIR environment variable and replaces with the help of sed the __VITE_API_URL__ token with the value from the environment variable during startup time.
+The find commands finds all files in a directory specified by the ASSETS_DIR environment variable and replaces with the help of sed the ```__VITE_API_URL__``` token with the value from the environment variable during startup time.
 
 For executing the script properly we copy it to /docker-entrypoint.d directory within the nginx container - another nice extensionpoint of the nginx container.
 
